@@ -18,7 +18,7 @@ provider "aws" {
 resource "aws_security_group" "WWW_SG" {
   name        = "www security group"
   description = "www security group"
-  vpc_id      = "vpc-02f641f59e1c9a10f"
+  vpc_id      = "<vpc_id>" // Change "<vpc_id>" by your VPC ID
   ingress {
     description      = "TLS from VPC"
     from_port        = 0  // Means all types of Inbounds
