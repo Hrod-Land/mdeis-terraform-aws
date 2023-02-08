@@ -44,6 +44,13 @@ resource "aws_instance" "www" {
   ami           = "ami-076bdd070268f9b8d"
   instance_type = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.WWW_SG.id}"]  //Attaching the security group to ubuntu instance
+  user_data = <<-EOF
+    #!bin/bash
+    sudo apt install net-tools
+    sudo apt update
+    sudo apt -y install apache2
+    echo "<h1>Hello World</h1>" > /var/www/html/index.html
+  EOF
   tags = {
     Name = "Ubuntu_20_04"
   }
