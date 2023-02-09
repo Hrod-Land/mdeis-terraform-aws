@@ -1,11 +1,5 @@
 # terrafor-aws
 Stepts to follow:
-1. Open terminal on "main.tf" path
-2. Run "terraform init"
-3. Run "terraform plan"
-4. Run "terraform apply"
-
-
 1.  git clone https://github.com/Hrod-Land/mdeis-terraform-aws.git
 2.  cd .\mdeis-terraform-aws\
 3.  Cambiar el vpc_id en el main.tf > Guardar los cambios
