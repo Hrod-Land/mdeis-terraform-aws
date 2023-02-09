@@ -15,7 +15,7 @@ terraform {
 
 #Setting de provider (AWS)
 provider "aws" {
-  region  = "eu-central-1"
+  region  = "<region_id>" // Change "<region_id>" by your proper Region ID
 }
 
 #####################################################################################################
@@ -26,7 +26,7 @@ provider "aws" {
 resource "aws_security_group" "WWW_SG" {
   name        = "www security group"
   description = "www security group"
-  vpc_id      = "<enter_vpc_id>" // Change "<enter_vpc_id>" by your VPC ID
+  vpc_id      = "<enter_vpc_id>" // Change "<enter_vpc_id>" by your VPC ID based on the Region ID
   ingress {
     description      = "TLS from VPC"
     from_port        = 0  // Means all types of Inbounds
@@ -108,7 +108,7 @@ resource "aws_instance" "server_b" {
 resource "aws_security_group" "WWW_B_SG" {
   name        = "www_b security group"
   description = "www security group for server b"
-  vpc_id      = "<enter_vpc_id>" // Change "<enter_vpc_id>" by your VPC ID
+  vpc_id      = "<enter_vpc_id>" // Change "<enter_vpc_id>" by your VPC ID based on the Region ID
   ingress {
     description      = "TLS from VPC"
     from_port        = 0  // Means all types of Inbounds
