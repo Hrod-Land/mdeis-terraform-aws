@@ -49,7 +49,7 @@ resource "aws_security_group" "WWW_SG" {
 
 #***** CREATES KEY PAIR *****#
 # Generates a secure private key and encodes it as PEM
-resource "tls_private_key" "private_key_pair" { // protocol TLS = Transfer Layer Security
+/* resource "tls_private_key" "private_key_pair" { // protocol TLS = Transfer Layer Security
   algorithm = "RSA"
   #rsa_bits  = 4096
 }
@@ -62,7 +62,7 @@ resource "aws_key_pair" "key_pair" {
 resource "local_file" "ubuntu-key-pair" {
   filename = "${aws_key_pair.key_pair.key_name}.pem"
   content  = tls_private_key.private_key_pair.private_key_pem
-}
+} */
 
 #***** CREATES THE "Ubuntu_20_04_A" INSTANCE (Ubuntu Server 20.04 LTS (HVM), SSD Volume Type) *****#
 resource "aws_instance" "www" {
@@ -79,7 +79,7 @@ resource "aws_instance" "www" {
     sudo rm -r ../../var/www/html/*
     sudo git clone https://github.com/bedimcode/responsive-login-signin-signup.git ../../var/www/html/
   EOF
-  key_name = aws_key_pair.key_pair.key_name
+  #key_name = aws_key_pair.key_pair.key_name
   tags = {
     Name = "Ubuntu_20_04_A"
   }
