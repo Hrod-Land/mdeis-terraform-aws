@@ -4,3 +4,12 @@ Stepts to follow:
 2. Run "terraform init"
 3. Run "terraform plan"
 4. Run "terraform apply"
+
+
+1.  git clone https://github.com/Hrod-Land/mdeis-terraform-aws.git
+2.  cd .\mdeis-terraform-aws\
+3.  Cambiar el vpc_id en el main.tf > Guardar los cambios
+4.  terraform init
+5.  terraform plan
+6.  terraform apply
+7.  access to "http://<instance_public_ip>:80
